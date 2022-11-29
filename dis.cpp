@@ -341,15 +341,17 @@ string printI(int x)
 
             case 1:
                 risc_v += "slli ";
-                imm = imm & 31;
+                imm = imm & 63;
                 break;
 
             case 2:
                 risc_v += "slti ";
+                imm = imm & 63;
                 break;
 
             case 3:
                 risc_v += "sltiu ";
+                imm = imm & 63;
                 break;
 
             case 4:
@@ -364,7 +366,7 @@ string printI(int x)
                 {
                     return("\033[31mERROR \033[0m: Invalid Funct7 for I-Format");
                 }
-                imm = imm & 31;
+                imm = imm & 63;
                 break;
 
             case 6:
